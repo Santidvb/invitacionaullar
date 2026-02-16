@@ -10,10 +10,7 @@ boton.addEventListener("click", async () => {
 	document.body.classList.remove("MA");
 	document.body.classList.add("MI");
  
-    try{
-		bgm.volume = 0.4;
-		await bgm.play();
-		} catch (e) {
-			console.log("app de mierda", e);
-		}
+    bgm.play()
+	.then(() => alert("si"))
+	.catch(e => alert("no" + e.name));
 });
