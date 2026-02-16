@@ -1,0 +1,103 @@
+@font-face{
+   font-family: "F";
+   src: url("font/Geo.ttf")
+}
+
+body{
+   color: rgb(205, 0, 0);
+   background-color: rgb(5, 0, 10);
+   margin: 0;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+  
+   
+}
+.y{
+   font-family: "F";
+   font-size: 30px;
+   animation: rgbText 0.3s linear infinite;
+}
+@keyframes rgbText {
+   0% { color: red;}
+   33% { color:lime;}
+   66% { color: blue;}
+   100% { color: red;}
+}
+@property --c{
+syntax: "<color>";
+inherits: false;
+initial-value: #ff0000;
+}
+.g{
+ --c: #f00;
+ display: flex;
+ background: linear-gradient(to bottom, #000 70%, var(--c) 100%);
+ animation: fondoRgb 0.7s linear infinite;
+ align-items: center;
+   justify-content: center;
+   width: 100vw;
+   height: 100vh;
+}
+@keyframes fondoRgb{
+0% {--c: #ff0000;}
+33% {--c: #00ff00;}
+66% {--c: #0000ff;}
+100% {--c: #ff0000;}
+}
+.divLobo{
+   align-items: center;
+   justify-content: center;
+   width: 300px;
+   height: 340px;
+   padding: 20px 0px 0px 20px;
+  
+}
+.c{
+   margin-top: 2px;
+   margin-bottom: 4px;
+   animation: rgbText 1s linear infinite;
+}
+.images{
+   display: flex;
+   flex-direction: column;
+   width: 200px;
+   height: auto;
+   text-align: center;
+}
+.luna{
+margin-left: 90px;
+width: 100px;
+height: 100px;
+animation: flotarLuna 0.3s ease-in-out infinite;
+}
+.lobo{
+   display: block;
+   width: 200px;
+   height: 240px;
+   animation: rotar 3.87s linear infinite;
+   
+}
+.flote{
+display: inline-block;
+animation: flotar 0.7s ease-in-out infinite;
+}
+
+@keyframes flotar{
+   0% {transform: translateY(0px);}
+   25% {transform: translateY(-10px);}
+   50% {transform: translateY(0px);}
+   65% {transform: translateY(-20px);}
+   100% {transform: translateY(0px);}
+}
+@keyframes flotarLuna{
+   0% {transform: translateX(10px) translateY(0px);}
+   25% {transform: translateX(0px) translateY(-10px);}
+   50% {transform: translateX(-10px) translateY(0px);}
+   65% {transform: translateX(0px) translateY(10px);}
+   100% {transform: translateX(10px) translateY(0px);}
+}
+@keyframes rotar{
+0%,90% {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}
+}
