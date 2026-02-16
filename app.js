@@ -1,4 +1,4 @@
-const abrir = document.getElementById("boton");
+const boton = document.getElementById("boton");
 const intro = document.getElementById("intro");
 const final = document.getElementById("final");
 const bgm = document.getElementById("bgm");
@@ -10,5 +10,5 @@ boton.addEventListener("click", async () => {
 	document.body.classList.remove("MA");
 	document.body.classList.add("MI");
  
-   audio.play()
+   bgm.play()
 });
