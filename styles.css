@@ -1,0 +1,170 @@
+@font-face{
+  font-family: "F";
+  src: url("font/Geo.ttf");
+}
+
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body{
+  color: rgb(205, 0, 0);
+  background-color: rgb(5, 0, 10);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.y{
+  font-family: "F";
+  animation: rgbText 0.3s linear infinite;
+}
+
+.b{
+  font-size: 130%;
+}
+
+@keyframes rgbText {
+  0% { color: red;}
+  33% { color: lime;}
+  66% { color: blue;}
+  100% { color: red;}
+}
+
+@property --c{
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ff0000;
+}
+
+
+.g{
+  --c: #f00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100svh;  
+  height: auto;
+
+  background: linear-gradient(to bottom, #000 55svh, var(--c) 100svh);
+  animation: fondoRgb 0.7s linear infinite;
+
+ 
+  box-sizing: border-box;
+}
+
+@keyframes fondoRgb{
+  0% {--c: #ff0000;}
+  33% {--c: #00ff00;}
+  66% {--c: #0000ff;}
+  100% {--c: #ff0000;}
+}
+
+
+.divLobo{
+  width: 50%;
+  box-sizing: border-box;
+
+  
+  padding-top: clamp(24px, 8vh, 120px);
+  padding-left: clamp(16px, 6vw, 140px);
+  padding-right: 16px;
+}
+
+.c{
+  margin-top: 2px;
+  margin-bottom: 4px;
+  animation: rgbText 1s linear infinite;
+}
+
+
+.images{
+  width: 50%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;         
+  justify-content: center;
+
+  gap: 16px;
+  padding-right: clamp(16px, 6vw, 140px);
+  text-align: right;
+}
+
+.luna{
+  width: min(420px, 70%);
+  max-height: 40svh;
+  animation: flotarLuna 0.3s ease-in-out infinite;
+}
+
+.lobo{
+  width: min(520px, 85%);
+  animation: rotar 3.87s linear infinite;
+}
+
+.flote{
+  display: inline-block;
+  animation: flotar 0.7s ease-in-out infinite;
+}
+
+@keyframes flotar{
+  0% {transform: translateY(0px);}
+  25% {transform: translateY(-10px);}
+  50% {transform: translateY(0px);}
+  65% {transform: translateY(-20px);}
+  100% {transform: translateY(0px);}
+}
+
+@keyframes flotarLuna{
+  0% {transform: translateX(10px) translateY(0px);}
+  25% {transform: translateX(0px) translateY(-10px);}
+  50% {transform: translateX(-10px) translateY(0px);}
+  65% {transform: translateX(0px) translateY(10px);}
+  100% {transform: translateX(10px) translateY(0px);}
+}
+
+@keyframes rotar{
+  0%,90% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+
+@media (max-width: 700px){
+  .g{
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 16px 0 24px;
+  }
+
+  .divLobo, .images{
+    width: 100%;
+  }
+
+  .divLobo{
+    padding: 24px 18px 12px;
+    text-align: left;
+  }
+
+  .images{
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+
+  .luna{
+    width: min(320px, 80%);
+    max-height: 32svh;
+  }
+
+  .lobo{
+    width: min(380px, 85%);
+  }
+}
