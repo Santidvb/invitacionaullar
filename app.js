@@ -10,7 +10,5 @@ boton.addEventListener("click", async () => {
 	document.body.classList.remove("MA");
 	document.body.classList.add("MI");
  
-    bgm.play()
-	.then(() => alert("si"))
-	.catch(e => alert("no" + e.name));
+   audio.play()
 });
