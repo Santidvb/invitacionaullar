@@ -14,4 +14,4 @@ boton.addEventListener("pointerdown", () => {
 	document.body.classList.remove("MA");
 	document.body.classList.add("MI");
  
-});
+}, {passive: true});
