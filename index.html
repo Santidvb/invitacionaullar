@@ -9,11 +9,18 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-	<audio autoplay loop hidden>
+<body class="MA">
+	
+	<div class="invitacion" id="intro">
+	<h1>Abre la Invitación</h1>
+	<button id="boton" class="boton"><img src="media/diamante.png"/></button>
+	</div>
+	
+	
+	<div class="g hidden" id="final">
+		<audio id="bgm" loop>
 	   <source src="media/Animals.mp3" type="audio/mpeg">
 	</audio>
-	<div class="g">
 	<div class="divLobo">
 		<h2 class="b y">Reunion para Aullar a la Luna</h2>
 		<p class="b c">Hora: Media Noche</p>
@@ -27,6 +34,7 @@
 		</div>
 	</div>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
